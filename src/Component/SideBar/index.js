@@ -7,7 +7,7 @@ const cs = classNames.bind(styles);
 function SiderBar({ onClick }, ref) {
   return (
     <div onClick={onClick} ref={ref} className={cs("container")}>
-      <div className={cs("wrapper")} >
+      <div className={cs("wrapper")} onClick={(e) => e.stopPropagation()}>
         <div className={cs("containerItem", "activeItem")}>
           <p className={cs("sidebarItem")}>Home</p>
         </div>
