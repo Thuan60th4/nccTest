@@ -1,0 +1,45 @@
+.wrapper {
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 1.9rem;
+}
+
+.imageDes {
+  display: flex;
+
+  img {
+    width: 120px;
+    height: 120px;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 19px;
+    color: #000000;
+    margin: 0;
+    text-align: start;
+  }
+}
+
+.des {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 19px;
+  color: #000000;
+  margin: 0;
+  text-align: start;
+}
+
+@media (max-width: 1150px) {
+  .imageDes {
+    flex-direction: column;
+    img {
+      align-self: center;
+    }
+  }
+}

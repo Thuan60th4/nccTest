@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from "react";
+import "./App.css";
+import Content from "./Component/Content";
+import Header from "./Component/Header/Header";
+import SiderBar from "./Component/SideBar";
 
 function App() {
+  const sideBarRef = useRef();
+
+  const handleShowSidebar = () => {
+    sideBarRef.current.classList.toggle("visible");
+  };
+
+  const handleOuteSideBar = () => {
+    if (sideBarRef.current.classList.contains("visible")) {
+      sideBarRef.current.classList.remove("visible");
+    }
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header onClick={handleShowSidebar} className="header" />
+      <SiderBar onClick={handleOuteSideBar} ref={sideBarRef} />
+      <Content />
     </div>
   );
 }
